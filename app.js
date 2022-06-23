@@ -4,10 +4,10 @@ const Header = () => {
 };
 
 // Player Component
-const Player = () => {
+const Player = (props) => {
   return (
-    <div className="X">
-      <h2>Player X</h2>
+    <div className={props.playerName}>
+      <h2>Player {props.playerName}</h2>
       <h3>Wins: </h3>
     </div>
   );
@@ -44,8 +44,8 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header />
-        <Player />
-        <Player />
+        <Player playerName="X" />
+        <Player playerName="O" />
         <Board />
       </div>
     );
